@@ -22,8 +22,8 @@ namespace chopeen
 
         private static async Task Execute()
         {
-            var from = new EmailAddress(_config["FromEmail"], _config["FromName"]);
-            var to = new EmailAddress(_config["ToEmail"]);
+            var from = MailHelper.StringToEmailAddress(_config["FromAddress"]);
+            var to = MailHelper.StringToEmailAddress(_config["ToAddress"]);
             // subject and body are set in the template (configured via the SendGrid portal)
             var subject = "";  
             var plainTextContent = "";
